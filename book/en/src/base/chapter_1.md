@@ -155,15 +155,12 @@ Homepage: https://github.com/d2learn/xlings
 
 Edit the `lang` attribute in the project configuration file `.d2x.json`. `zh` corresponds to Chinese, and `en` corresponds to English.
 
-```lua
-    },
-
-    private = {
-        -- project private attributes
-        mcpp = {
-            lang = "en", -- option: en, zh
-        }
-    },
+```bash
+{
+    "version": "0.1.1",
+    "buildtools": "xmake d2x-buildtools",
+    "lang": "en",
+    ...
 }
 ```
 

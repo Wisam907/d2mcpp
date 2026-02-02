@@ -153,15 +153,12 @@ Homepage: https://github.com/d2learn/xlings
 
 编辑项目配置文件`.d2x.json`中的`lang`属性, `zh`对应中文, `en`对应英文
 
-```lua
-    },
-
-    private = {
-        -- project private attributes
-        mcpp = {
-            lang = "en", -- option: en, zh
-        }
-    },
+```bash
+{
+    "version": "0.1.1",
+    "buildtools": "xmake d2x-buildtools",
+    "lang": "en",  < -- 修改这里
+    ...
 }
 ```
 
@@ -172,11 +169,12 @@ Homepage: https://github.com/d2learn/xlings
 **1.编辑项目配置文件`config.xlings`中的`editor`属性, 设置为`nvim` (或`zed`)**
 
 ```bash
-d2x = {
-    checker = {
-        name = "dslings",
-        editor = "nvim", -- option: vscode, nvim, zed
-    },
+{
+    "version": "0.1.1",
+    "buildtools": "xmake d2x-buildtools",
+    "lang": "en",  < -- 修改这里
+    ...
+}
 ```
 
 **2.在项目根目录运行一键依赖安装和环境配置命令**

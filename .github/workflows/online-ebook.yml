@@ -43,6 +43,7 @@ jobs:
       - name: Install mdBook by Xlings
         run: |
           curl -fsSL https://d2learn.org/xlings-install.sh | bash
+          export PATH=/home/xlings/.xlings_data/bin:$PATH
           xlings install mdbook@${MDBOOK_VERSION} --global -y
       - name: Setup Pages
         id: pages

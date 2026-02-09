@@ -15,7 +15,7 @@
 //   d2x checker final-and-override-1
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 
 #include <iostream>
 #include <string>
@@ -29,7 +29,7 @@ struct A {
 
 struct B : A  {
 
-    int func1() {
+    int func1() override final {
         return 3;
     }
 
@@ -52,7 +52,7 @@ int main() {
     d2x_assert_eq(a->func1(), 3); // B::func1()
     d2x_assert_eq(a->func2(), 2); // A::func2()
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }

@@ -17,7 +17,7 @@
 //   d2x checker nullptr
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 
 bool process_int_called = false;
 bool process_ptr_called = false;
@@ -44,15 +44,15 @@ int main() {
 
     display(0);
     process(nullptr);
-    display(NULL);
-    process(NULL);
+    display(nullptr);
+    process(0);
 
     d2x_assert(process_int_called);
     d2x_assert(display_int_called);
     d2x_assert(display_ptr_called);
     d2x_assert(display_ptr_called);
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }

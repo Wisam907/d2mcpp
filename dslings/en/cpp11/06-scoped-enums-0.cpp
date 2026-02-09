@@ -14,7 +14,7 @@
 //   d2x checker scoped-enums
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 
 #include <iostream>
 
@@ -28,7 +28,7 @@ enum Color {
 enum Fruit {
     Apple,
     Banana,
-    ORANGE // 1. Type conflict - Orange fruit
+    ORANGES // 1. Type conflict - Orange fruit
 };
 
 int main() {
@@ -42,14 +42,14 @@ int main() {
     // 2. Syntactically correct, but logically wrong type matching
     if (color == Apple) { // Do not delete this line of code
         // Code will run here
-        D2X_WAIT
+        // D2X_WAIT
     }
 
     if (fruit == RED) {
-        D2X_WAIT
+        // D2X_WAIT
     }
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }

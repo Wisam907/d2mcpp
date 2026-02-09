@@ -18,7 +18,17 @@
 //   d2x checker auto-and-decltype
 //
 
-#include <d2x/cpp/common.hpp>
+#include <cassert>
+// #include "../../../d2x/cpp/common.hpp"
+
+#define D2X_YOUR_ANSWER int
+
+template<typename T>
+void d2x_assert_eq(T a1, T a2) {
+    assert(a1 == a2);
+}
+
+#define D2X_WAIT do {}while(0);
 
 int main() {
 

@@ -17,13 +17,13 @@
 //   d2x checker type-alias
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 #include <type_traits>
 
-int main() {
+template <typename T>
+using my_add_pointer_t = typename std::add_pointer<T>::type;
 
-    template <typename T>
-    D2X_YOUR_ANSWER my_add_pointer_t = typename std::add_pointer<T>;
+int main() {
 
     int c = 20;
     my_add_pointer_t<decltype(c)> ptr = &c;
@@ -33,7 +33,7 @@ int main() {
     d2x_assert(ok);
     d2x_assert_eq(*ptr, 20);
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }

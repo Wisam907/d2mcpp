@@ -15,7 +15,7 @@
 //   d2x checker default-and-delete-1
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 
 #include <iostream>
 
@@ -23,6 +23,13 @@
 struct UniquePtr {
     void *dataPtr;
     UniquePtr() = default;
+    // 禁用copy
+    UniquePtr(const UniquePtr&) = delete;
+    UniquePtr& operator=(const UniquePtr&) = delete;
+
+    // 允许移动
+    UniquePtr(UniquePtr&&) = default;
+    UniquePtr& operator=(UniquePtr&&) = default;
 };
 
 int main() { // Do not directly modify the code in the main function
@@ -42,7 +49,7 @@ int main() { // Do not directly modify the code in the main function
     // a = std::move(c); // ok
     d2x_assert(std::is_move_assignable<UniquePtr>::value == true);
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }

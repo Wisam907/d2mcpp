@@ -17,15 +17,15 @@
 //   d2x checker type-alias
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 
 #include <type_traits>
 
 int main() {
 
     // 1. Basic type alias definition
-    D2X_YOUR_ANSWER Integer = int;
-    D2X_YOUR_ANSWER = int;
+    using Integer = int;
+    using Real = double;
 
     bool ok = std::is_same<Integer, int>::value; d2x_assert(ok);
     ok = std::is_same<Real, double>::value; d2x_assert(ok);
@@ -44,7 +44,7 @@ int main() {
 
     d2x_assert_eq(c, d);
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }

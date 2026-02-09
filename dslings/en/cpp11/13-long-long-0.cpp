@@ -17,24 +17,24 @@
 //   d2x checker long-long
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 
 #include <type_traits>
 
 int main() {
 
     // 1. Basic declaration and initialization
-    D2X_YOUR_ANSWER val1 = 1;
-    D2X_YOUR_ANSWER val2 = -1;
+    unsigned int val1 = 1;
+    int val2 = -1;
 
     // 2. Integer representation range
-    unsigned int uVal1 = 18446744073709551615;
+    unsigned long long uVal1 = 18446744073709551615;
     d2x_assert_eq(uVal1, 18446744073709551615ULL);
 
     // 3. Type deduction and literals
     // Fix the declarations below to let auto correctly deduce the types
-    auto longlong = 1234567890;
-    auto ulonglong = 9876543210;
+    auto longlong = 1234567890LL;
+    auto ulonglong = 9876543210ULL;
 
     bool is_longlong = std::is_same<decltype(longlong), long long>::value;
     bool is_ulonglong = std::is_same<decltype(ulonglong), unsigned long long>::value;
@@ -42,7 +42,7 @@ int main() {
     d2x_assert(is_longlong == true);
     d2x_assert(is_ulonglong == true);
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }

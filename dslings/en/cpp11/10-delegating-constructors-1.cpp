@@ -15,7 +15,7 @@
 //   d2x checker delegating-constructors
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 
 #include <iostream>
 #include <string>
@@ -40,20 +40,19 @@ class Account {
 public:
 
     Account(std::string id_)
-        : Account(id_, "momo"), coin { "100元" }
+        : Account(id_, "momo")
     {
 
     }
 
-    Account(std::string id_, std::string name_) {
-        Account(id_, name_, 0);
+    Account(std::string id_, std::string name_) : Account(id_, name_, 0) {
+        
     }
 
-    Account(std::string id_, std::string name_, int coin_) {
+    Account(std::string id_, std::string name_, int coin_) : obj(name_) {
         id = id_;
         name = name_;
         coin = std::to_string(coin_) + "元";
-        obj = Object(name_);
     }
 
     std::string get_id() const {
@@ -86,7 +85,7 @@ int main() { // Do not modify the code in the main function
     d2x_assert(a2.get_object_name() == "d2learn");
     d2x_assert_eq(Object::construction_counter, 1);
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }

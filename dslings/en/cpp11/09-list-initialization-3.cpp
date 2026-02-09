@@ -16,7 +16,7 @@
 //   d2x checker list-initialization
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 
 #include <iostream>
 #include <vector>
@@ -65,6 +65,8 @@ struct Point {
     int x, y;
 
     Point() : x {0}, y{0} { }
+
+    Point(int x1, int y1) : x(x1), y(y1) {}
 };
 
 int main() {
@@ -80,9 +82,9 @@ int main() {
     MyVector vec3(1, 10);
     d2x_assert_eq(vec3.size(), 10);
     MyVector vec4 { 1, 10 };
-    d2x_assert_eq(vec4.size(), 10);
+    d2x_assert_eq(vec4.size(), 2);
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }

@@ -15,7 +15,7 @@
 //   d2x checker inherited-constructors
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 
 #include <iostream>
 #include <string>
@@ -46,10 +46,25 @@ class StudentTest : public Student {
 public:
 
     D2X_YOUR_ANSWER // Implement Student's helper test class
+    bool age_valid() {
+        if (Student::age <= 0 || Student::age > 200) {
+            return false;
+        }
+        return true;
+    }
+
+    bool score_valid() {
+        if (Student::score < 0 || Student::score > 100) {
+            return false;
+        }
+        return true;
+    }
 
     std::string to_string() const {
         return "{" + id + ", " + name + ", " + std::to_string(age) + ", " + std::to_string(score) + "}";
     }
+
+    using Student::Student;
 };
 
 // Test requirements:
@@ -90,7 +105,7 @@ int main() { // Do not directly modify the code in the main function
 
     }
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }

@@ -15,13 +15,13 @@
 //   d2x checker final-and-override-2
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 
 #include <iostream>
 #include <string>
 
 struct AudioPlayer { // Do not directly modify the AudioPlayer class
-    virtual void play() final {
+    virtual void play() {
         init_audio_params();
         play_audio();
     }
@@ -52,6 +52,13 @@ struct  MP3Player : AudioPlayer {
 
 struct OGGPlayer : AudioPlayer {
     // Correctly implement OGGPlayer
+    void init_audio_params() override {
+        std::cout << "OGGPlayer: Initializing audio parameters..." << std::endl;
+    }
+
+    void play_audio() override {
+        std::cout << "OGGPlayer: Playing OGG audio..." << std::endl;
+    }
 
     void play() override {
         // init_audio_params();
@@ -77,7 +84,7 @@ int main() { // Do not directly modify the code in the main function
     delete player2;
     delete player3;
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }

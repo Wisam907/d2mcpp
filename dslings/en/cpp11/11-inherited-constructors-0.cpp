@@ -15,7 +15,7 @@
 //   d2x checker inherited-constructors
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 
 #include <iostream>
 #include <string>
@@ -25,7 +25,9 @@ public:
     ObjectBase(int x) { std::cout << "ObjectBase::ObjectBase(int): " << x << std::endl; }
     ObjectBase(double x) { std::cout << "ObjectBase::ObjectBase(double): " << x << std::endl; }
 
-    D2X_YOUR_ANSWER
+    ObjectBase(int x, double y) : ObjectBase(x) {
+        std::cout << "ObjectBase::ObjectBase(double): " << y << std::endl;
+    }
 
     void info() const { std::cout << "ObjectBase: " << this << std::endl; }
 };
@@ -35,7 +37,9 @@ public:
     ObjectA(int x) : ObjectBase(x) { std::cout << "ObjectA::ObjectA(int)" << std::endl; }
     ObjectA(double y) : ObjectBase(y) { std::cout << "ObjectA::ObjectA(double)" << std::endl; }
 
-    D2X_YOUR_ANSWER
+    ObjectA(int x, double y) : ObjectBase(x, y) {
+
+    }
 
     void tips_a() const {
         std::cout << "ObjectA: add constructors to ObjectA" << std::endl;
@@ -66,7 +70,7 @@ int main() { // Do not directly modify the code in the main function
     a1.tips_a();
     b1.tips_b();
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }

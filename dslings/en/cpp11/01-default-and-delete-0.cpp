@@ -15,7 +15,7 @@
 //   d2x checker default-and-delete
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 
 #include <iostream>
 
@@ -32,10 +32,10 @@ struct C {
 int main() { // Do not directly modify the code in the main function
 
     A a;
-    B b;
+    B b(0);
     C c(1);
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }

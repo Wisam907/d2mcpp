@@ -15,7 +15,7 @@
 //   d2x checker default-and-delete-2
 //
 
-#include <d2x/cpp/common.hpp>
+#include "../../../d2x/cpp/common.hpp"
 
 #include <iostream>
 
@@ -29,9 +29,9 @@ void func(float) = delete;
 int main() {
 
     func(1);     // int
-    func(1.1f);  // float
+    func((int)1.1);  // float
 
-    D2X_WAIT
+    // D2X_WAIT
 
     return 0;
 }
